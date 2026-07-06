@@ -56,7 +56,7 @@ local sets = {
         Feet = {'Crow Gaiters', 'Light Soleas'},
     },
     ['INT_Priority'] = {
-        Head = {'Erd. Headband'},
+        Head = {'Warlock\'s Chapeau', 'Erd. Headband'},
         Neck = {'Black Neckerchief'},
         Ear1 = {'Morion Earring'},
         Ear2 = {'Morion Earring'},
@@ -195,7 +195,10 @@ profile.HandleMidcast = function()
     --hooks for magic types
     if (action.Skill ~= nil) then
         if (action.Skill == 'Enhancing Magic') then gFunc.Equip('Legs', 'Warlock\'s Tights');
-        elseif (action.Skill == 'Healing Magic') then gFunc.Equip('Legs', 'Warlock\'s Tights');
+        elseif (action.Skill == 'Healing Magic') then
+            gFunc.Equip('Legs', 'Warlock\'s Tights');
+            gFunc.Equip('Neck', 'Healing Torque');
+        elseif (action.Skill == 'Elemental Magic') then gFunc.Equip('Head', 'Warlock\'s Chapeau');
         elseif (action.Skill == 'Enfeebling Magic') then gFunc.Equip('Body', 'Warlock\'s Tabard'); end
     end
 
