@@ -1,5 +1,7 @@
 -- BLU example for Horizon.
 -- attribute assicians are guesses
+-- breath spells in retail rely on HP.  Have not implemented that.
+-- Magic Accuracy has been lumped into INT gear becuase I have no MACC gear.
 -- Gear Level Sync down to 30
 -- USES HUME MALE RSE
 -- If you think my gear sucks, you're welcome to buy me better gear
@@ -253,7 +255,7 @@ profile.HandleMidcast = function()
         'Exuviation', 'Healing Breeze', 'Pollen', 'Sheep Song', 'Wild Carrot', 'Blank Gaze',
         'Radiant Breath', 'Light of Penance', 'Magic Fruit', 'Winds of Promy.'};
     local DarkStaff = T{'Eyes On Me', 'Enervation', 'Blood Drain', 'Soporific', 'Death Ray',
-        'Digest', 'MP Drainkiss', 'Geist Wall', 'Blood Saber', 'Jettatura',};
+        'Digest', 'MP Drainkiss', 'Geist Wall', 'Blood Saber', 'Jettatura'};
 
     if (StrSpells:contains(action.Name)) then gFunc.EquipSet(sets.STR);
     elseif (DexSpells:contains(action.Name)) then gFunc.EquipSet(sets.DEX);
