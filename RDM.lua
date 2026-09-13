@@ -32,7 +32,7 @@ local sets = {
         Ear2 = {'Dodge Earring'},
         Body = {'Scorpion Harness', 'Crow Jupon', 'Mrc.Cpt. Doublet'},
         Hands = {'Ryl.Ftm. Gloves'},
-        Ring1 = {'Victory Ring', 'Courage Ring'},
+        Ring1 = {'Rajas Ring', 'Courage Ring'},
         Ring2 = {'Victory Ring', 'Courage Ring'},
         Back = {'Amemet Mantle', 'Traveler\'s Mantle'},
         Waist = {'Quick Belt', 'Mrc.Cpt. Belt'},
@@ -89,20 +89,42 @@ local sets = {
         Legs = 'Worker Hose',
         Feet = 'Worker Boots',
     },
-    ['RLB'] = {
-        Head = 'Erd. Headband',
-        Neck = 'Black Neckerchief',
-        Ear1 = 'Morion Earring',
-        Ear2 = 'Morion Earring',
-        Body = 'Justaucorps +1',
-        Hands = 'Mage\'s Mitts',
-        Ring1 = 'Victory Ring',
-        Ring2 = 'Victory Ring',
-        Back = 'Black Cape +1',
-        Waist = 'Ryl.Kgt. Belt',
-        Legs = 'Magic Cuisses',
-        Feet = 'Tct.Mgc. Pigaches',
+    ['RLB_Priority'] = {
+        Head = {'Warlock\'s Chapeau', 'Erd. Headband'},
+        Neck = {'Black Neckerchief'},
+        Ear1 = {'Morion Earring'},
+        Ear2 = {'Morion Earring'},
+        Body = {'Baron\'s Saio'},
+        Hands = {'Enkelados\'s Brc.'},
+        Ring1 = {'Rajas Ring', 'Courage Ring'},
+        Ring2 = {'Victory Ring', 'Courage Ring'},
+        Back = {'Black Cape +1'},
+        Waist = {'Ryl.Kgt. Belt', 'Mrc.Cpt. Belt'},
+        Legs = {'Magic Cuisses', 'Mage\'s Slacks'},
+        Feet = {'Tct.Mgc. Pigaches'},
     },
+    ['SB_Priority'] = {
+        Head = {'Warlock\'s Chapeau', 'Lgn. Circlet'},
+        Neck = {'Justice Badge'},
+        Ear1 = {'Geist Earring'},
+        Ear2 = {'Geist Earring'},
+        Body = {'Baron\'s Saio'},
+        Hands = {'Enkelados\'s Brc.', 'Devotee\'s Mitts'},
+        Ring1 = {'Rajas Ring', 'Courage Ring'},
+        Ring2 = {'Victory Ring', 'Courage Ring'},
+        Back = {'White Cape +1'},
+        Waist = {'Ryl.Kgt. Belt', 'Mrc.Cpt. Belt'},
+        Legs = {'Magic Cuisses'},
+    },
+    ['STR_Priority'] = {
+        Neck = {'Spike Necklace'},
+        Hands = {'Enkelados\'s Brc.', 'Custom M Gloves'},
+        Ring1 = {'Rajas Ring', 'Courage Ring'},
+        Ring2 = {'Victory Ring', 'Courage Ring'},
+        Back = {'Amemet Mantle'},
+        Waist = {'Ryl.Kgt. Belt'},
+    },
+
 };
 profile.Sets = sets;
 
@@ -226,6 +248,14 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction()
     if (action.Name == 'Red Lotus Blade') then
         gFunc.EquipSet(sets.RLB);
+    elseif (action.Name == 'Shining Blade') then
+        gFunc.EquipSet(sets.SB);
+    elseif (action.Name == 'Seraph Blade') then
+        gFunc.EquipSet(sets.SB);
+    elseif (action.Name == 'Savage Blade') then
+        gFunc.EquipSet(sets.SB);
+    elseif (action.Name == 'Vorpal Blade') then
+        gFunc.EquipSet(sets.STR);
     end
 end
 
